@@ -23,4 +23,4 @@ make all
 
 Az első futás hosszabb ideig fog tartani! A parancs letölt 4 PDF fájlt a `pdf/`
 könyvtárba, kinyeri belőle a szöveget a fenti eszközökkel, az eredményt a
-`txt/<eszkoz>/` konyvtarba irja. 
+`txt/<eszkoz>/` könyvtárba írja. 
