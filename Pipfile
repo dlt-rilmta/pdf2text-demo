@@ -9,7 +9,6 @@ rope = "*"
 
 [packages]
 tika = "*"
-textract = "*"
 
 [requires]
 python_version = "3.6"
