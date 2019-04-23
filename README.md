@@ -6,6 +6,7 @@ Ezután meg kéne nézni, hogy melyik eszköz a legjobb nekünk.
 ## Eszközök
 
 * [pypdf4](https://github.com/claird/PyPDF4)
+* [pdfrw](https://github.com/pmaupin/pdfrw) (kicsit elárvultnak tűnik, de ki lehet próbálni)
 * [textract](https://github.com/deanmalmgren/textract)
 * [tika-python](https://github.com/chrismattmann/tika-python)
 
