@@ -12,7 +12,7 @@ def get_fout(fname, module):
     """
     res = os.path.basename(fname)
     res = os.path.splitext(res)[0] + '.txt'
-    res = os.path.join('txt', module, res)
+    res = os.path.join('output', module, res)
     return res
 
 
@@ -23,7 +23,7 @@ def get_fout(fname, module):
 
 
 def demo_textract(files):
-    Path('txt/textract/').mkdir(parents=True, exist_ok=True)
+    Path('output/textract/').mkdir(parents=True, exist_ok=True)
     for finp in files:
         text = textract.process(finp, encoding='latin2')
         text = text.decode(encoding='latin2')
@@ -31,19 +31,30 @@ def demo_textract(files):
             print(text, file=f)
 
 
-def demo_tika(files):
-    Path('txt/tika/').mkdir(parents=True, exist_ok=True)
+def demo_tika_html(files):
+    Path('output/tika-html/').mkdir(parents=True, exist_ok=True)
+    tika.initVM()
+    from tika import parser
+    for finp in files:
+        parsed = parser.from_file(finp, xmlContent=True)
+        with open(get_fout(finp, 'tika-html'), 'w') as f:
+            print(parsed["content"], file=f)
+
+
+def demo_tika_txt(files):
+    Path('output/tika-txt/').mkdir(parents=True, exist_ok=True)
     tika.initVM()
     from tika import parser
     for finp in files:
         parsed = parser.from_file(finp)
-        with open(get_fout(finp, 'tika'), 'w') as f:
+        with open(get_fout(finp, 'tika-txt'), 'w') as f:
             print(parsed["content"], file=f)
 
 
 def main():
     files = glob('pdf/*.pdf')
-    demo_tika(files)
+    demo_tika_txt(files)
+    demo_tika_html(files)
     demo_textract(files)
 
 
