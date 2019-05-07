@@ -13,6 +13,7 @@ Ezután meg kéne nézni, hogy melyik eszköz a legjobb nekünk.
   * A telepítése gondot okozhat: függ a `pocketsphinx` python csomagtól, amihez linuxon kellenek a `libpulse-dev` és a `libasound2-dev` debian csomagok is! Ezért a Pipfile-ból is kiszedtem.
   * A csomag a közlönyök esetében nem tudta jól megtippelni a használt karakterkódolást, ezt kézzel kell 'latin2'-re állítani.
 * [tika-python](https://github.com/chrismattmann/tika-python)
+  * A tika kétféle kimenetet tud előállítani: a) sima txt-t és b) html-t. Ez utóbbi talán jobban parszolható a továbbiakban.
 
 ## Előfeltételek
 
